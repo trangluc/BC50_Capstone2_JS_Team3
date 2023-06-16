@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-  }
-  
+    font-family: 'Inter', sans-serif;
+}
   html {
     position: relative;
     min-height: 100%;
@@ -21,7 +21,7 @@
     margin: 0;
   }
   
-  .btn {
+  .btn-home {
     position: relative;
     border: 0;
     padding: 16px;
@@ -30,21 +30,18 @@
     align-items: center;
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.85);
-    font-family: 'Muli';
     font-size: 14px;
     line-height: 14px;
-    background-color: #294d5c;
     cursor: pointer;
     transition: all 0.15s;
+    background-color: #000000!important;
   }
-  .btn:hover {
+  .btn-home:hover {
     outline: none;
-    background-color: #5f9db8;
   }
   .btn:focus {
     outline: 0;
     box-shadow: none !important;
-    /* box-shadow: 0 0 0 2px #404b61, inset 0 0 0 2px #ffffff; */
   }
   .btn:active {
     transform: scale(0.95);
@@ -53,14 +50,33 @@
   .btn + .btn {
     margin-left: 8px;
   }
+
+  .btn-overlay {
+    color: black;
+    background-color: white;
+    position: relative;
+    border: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .card .btn-overlay:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+  }
   
   .main-color {
-    background: #2c5364;
+    background: #000000;
   }
-  
-  .gradient-custom {
-    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
-  }
+
   
   header #navbarColor01 a {
     transition: 0.3s all ease-in-out;
@@ -87,8 +103,8 @@
     background: rgba(0, 0, 0, 0.8);
   }
   .banner-image {
-    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)),
-      url(../img/banner.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.661), rgba(15, 0, 0, 0)),
+      url(../img/abstract-lilac-background-free-vector.jpeg);
     background-size: cover;
     background-position: center;
   }
@@ -104,6 +120,7 @@
   }
   .aa {
     line-height: 26px;
+    color: rgba(255, 255, 255, 0.823);
   }
   
   .banner-image .btn {
@@ -126,14 +143,17 @@
   
   .red-btn {
     background-color: #df461f;
+    color: white;
   }
   
   .red-btn:hover {
     background-color: #e96443;
+    color: white;
   }
   
   .yellow-btn {
-    background-color: #f0b80f;
+    background-color: rgb(0, 0, 0);
+    color: white
   }
   
   .yellow-btn:hover {
@@ -148,7 +168,7 @@
   }
   
   a {
-    color: #e2007a;
+    color: #df461f;
   }
   
   table {
@@ -185,7 +205,6 @@
   .meh {
     position: relative;
     color: #405461;
-    font-family: 'Muli';
   }
   
   .cart__overlay {
@@ -334,8 +353,8 @@
     object-fit: cover;
   }
   
-  .qty .count {
-    color: #000;
+  .mobile_quantity .count {
+    color: rgb(255, 255, 255);
     display: inline-block;
     vertical-align: top;
     font-size: 20px;
@@ -345,7 +364,7 @@
     min-width: 35px;
     text-align: center;
   }
-  .qty .plus {
+  .mobile_quantity .plus {
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
@@ -353,13 +372,14 @@
     width: 20px;
     height: 20px;
     margin-top: 1px;
+    line-height: 20px;
   
     font: 20px/1 Arial, sans-serif;
     text-align: center;
     border-radius: 50%;
-    background-color: #284c5b !important;
+    background-color: #000000 !important;
   }
-  .qty .minus {
+  .mobile_quantity .minus {
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
@@ -372,14 +392,16 @@
     text-align: center;
     border-radius: 50%;
     background-clip: padding-box;
-    background-color: #284c5b !important;
+    background-color: #000000 !important;
   }
   
   .minus:hover {
-    background-color: #4166af !important;
+    background-color: #2a2a2a !important;
+    color: white
   }
   .plus:hover {
-    background-color: #4166af !important;
+    background-color: #2a2a2a !important;
+    color: white
   }
   /*Prevent text selection*/
   span {
@@ -400,7 +422,7 @@
   #mobileListing img {
     width: 200px;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
   }
   
   #mobileListing .card {
@@ -410,7 +432,7 @@
     cursor: pointer;
     box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
     transition: 0.3s all ease-in-out;
-    height: 400px;
+    height: max-content;
     max-width: 100%;
     overflow: hidden;
     position: relative;
@@ -437,7 +459,7 @@
       rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
       rgba(240, 46, 170, 0.05) 25px 25px; */
     border: none;
-    box-shadow: #293e63 0px 22px 70px 4px;
+    box-shadow: #3e3e3e 0px 22px 70px 4px;
     transform: scale(1.1);
     z-index: 1;
   }
@@ -447,9 +469,9 @@
   
   .content-details {
     position: absolute;
-    text-align: center;
-    padding-left: 2em;
-    padding-right: 2em;
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
     width: 100%;
     top: 50%;
     left: 50%;
@@ -474,8 +496,6 @@
     letter-spacing: 0.15em;
     margin-bottom: 0.5em;
     font-size: 1.5em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .content-details p {
@@ -508,7 +528,7 @@
     transition: all 0.5s ease-in-out 0s;
     z-index: 1;
     background-color: #ffffff;
-    color: black;
+    color: rgb(255, 255, 255);
     opacity: 0;
   }
   
@@ -523,10 +543,16 @@
     color: white;
   }
   
-  .card:hover .btn {
+  .card:hover .btn-overlay {
     top: 85%;
     opacity: 1;
-    color: white;
+    color: rgb(2, 2, 2);
+  }
+
+  .card:hover .btn-overlay:hover {
+    top: 85%;
+    opacity: 1;
+    color: rgb(255, 255, 255);
   }
   
   .card span {
@@ -563,6 +589,9 @@
     width: 100%;
     /*height: 65rem;*/
   }
+  .bg-dark {
+    background-color: #000000!important;
+  }
   
   @media (max-width: 1199.5px) {
     /* .card {
@@ -597,4 +626,24 @@
       width: 100% !important;
     }
   }
+  .fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #df461f;
+}
+
+.mobile_thumbnail img {
+  width: 32px;
+}
   

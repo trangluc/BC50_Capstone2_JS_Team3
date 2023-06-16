@@ -14,16 +14,16 @@ const renderMobileList = (mobileList) => {
   mobileList.forEach((mob) => {
     content += `
     <div class="col-lg-3 col-md-6">
-    <div class="card my-3">
+    <div class="card my-3 fill">
           <img class="card-img-top" src=${mob.img} alt="Card image">
           <div class="card-body">
             <h4 class="card-title">${mob.name}</h4>
             <p class="card-text">${mob.desc}</p>
-            <p class="card-text">${mob.price}</p>
+            <p class="card-text" style="color:green"><b>${mob.price}</b></p>
             <div class="brand-box text-center">
               <span>${mob.type}</span>
             </div>
-            <button type="button" class="btn btn-block w-50" onclick="btnAddToCart('${mob.id}')">Add to cart</button>
+            <button type="button" class="btn btn-overlay btn-block w-50" onclick="btnAddToCart('${mob.id}')">Add to cart</button>
           </div>
           <div class="content-overlay"></div>
           <div class="content-details fadeIn-top">
@@ -66,15 +66,15 @@ const renderCart = (cartList) => {
   
     cartList.forEach((mob) => {
       content += `
-        <div class="mobile_cart d-flex justify-content-between align-item-center">
+        <div class="mobile_cart d-flex justify-content-between align-item-center p-3">
           <div class="mobile_thumbnail">
             <img src=${mob.product.img} alt="">
           </div>
-          <div>${mob.product.name}</div>
+          <div class="text-left">${mob.product.name}</div>
           <div class="mobile_quantity">
-            <span class="minus bg-dark w-32 h-32" onclick="btnMinus('${mob.product.id}')">-</span>
+            <span class="minus bg-dark text-white" onclick="btnMinus('${mob.product.id}')">-</span>
             <span class="quantityCart mx-2">${mob.quantity}</span>
-            <span class="plus bg-dark" onclick="btnAdd('${mob.product.id}')">+</span>
+            <span class="plus bg-dark text-white" onclick="btnAdd('${mob.product.id}')">+</span>
           </div>
           <div class="mobile_price"><b>$${mob.quantity * mob.product.price}</b></div>
           <button class="btn btn-danger" onclick="btnRemove('${mob.product.id}')">Remove</button>
@@ -95,6 +95,7 @@ const renderCart = (cartList) => {
     });
     // In số lượng hàng hoá ra badge
     getEle("cartCount").innerHTML = cartCount;
+    saveCartToLocalStorage()
   };
 
 
